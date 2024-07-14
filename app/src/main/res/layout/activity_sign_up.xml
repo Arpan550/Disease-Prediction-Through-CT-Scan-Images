@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".LoginActivity"
+    android:gravity="center">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:layout_gravity="center">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:layout_gravity="center_horizontal"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginTop="20dp"/>
+
+            <ViewSwitcher
+                android:id="@+id/viewSwitcher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Signup Form -->
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Name Input -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:hint="@string/name">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/nameET"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:inputType="textPersonName"
+                            android:background="@drawable/edittext_bg"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Email Input -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="@string/enter_your_email_id">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/emailET"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:inputType="textEmailAddress"
+                            android:background="@drawable/edittext_bg"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Password Input with Toggle -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="@string/enter_your_password"
+                        app:endIconMode="password_toggle">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/passwordET"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:inputType="textPassword"
+                            android:background="@drawable/edittext_bg"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Phone Number Input -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="@string/phone_number">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/phnoET"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:inputType="phone"
+                            android:background="@drawable/edittext_bg"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Gender Selection -->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/gender"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="8dp"/>
+
+                    <RadioGroup
+                        android:id="@+id/genderRadioGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp">
+
+                        <RadioButton
+                            android:id="@+id/maleRadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/male"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="20dp"/>
+                        <RadioButton
+                            android:id="@+id/femaleRadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/female"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="20dp"/>
+                        <RadioButton
+                            android:id="@+id/otherRadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/other"/>
+                    </RadioGroup>
+
+
+                    <!-- Date of Birth Input -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="@string/dob">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/dobET"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:inputType="date"
+                            android:background="@drawable/edittext_bg"
+                            android:focusable="false"
+                            android:onClick="showDatePickerDialog"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Country Selection -->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/country"
+                        android:textStyle="bold"/>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/selectCountry"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:hint="@string/country"
+                        android:focusable="false">
+
+                        <com.hbb20.CountryCodePicker
+                            app:ccp_defaultNameCode="IND"
+                            android:id="@+id/country_code"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:ccp_autoDetectCountry="false"
+                            app:ccp_showFlag="true"
+                            app:ccp_showNameCode="true"
+                            app:ccp_showFullName="true"
+                            android:focusable="false">
+                        </com.hbb20.CountryCodePicker>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Signup Button -->
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/signupBTN"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:padding="10dp"
+                        android:background="@drawable/bg_btn"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:text="@string/signup"
+                        android:textSize="15sp"/>
+
+                    <!-- Switch to Login -->
+                    <TextView
+                        android:id="@+id/already_have_acc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/already_have_an_account"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="16sp"
+                        android:textColor="#420909"
+                        android:layout_marginTop="15dp"
+                        android:onClick="showLoginForm"/>
+                </LinearLayout>
+            </ViewSwitcher>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

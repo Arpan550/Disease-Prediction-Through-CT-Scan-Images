@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chhose your profile picture"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:paddingBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/textGallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose from gallery"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/textTakePhoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Take photo"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/textCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:gravity="end"
+        android:padding="12dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:textColor="@android:color/black"/>
+
+</LinearLayout>
