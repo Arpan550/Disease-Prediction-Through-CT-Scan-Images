@@ -27,8 +27,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="16dp"
-            android:layout_marginStart="15dp"
-            android:gravity="center_horizontal">
+            android:gravity="center_vertical">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -53,7 +52,6 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="8dp"
-            android:layout_marginStart="15dp"
             android:gravity="center_vertical">
 
             <TextView
@@ -79,7 +77,6 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="8dp"
-            android:layout_marginStart="15dp"
             android:gravity="center_vertical">
 
             <TextView
@@ -105,59 +102,6 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="8dp"
-            android:layout_marginStart="15dp"
-            android:gravity="center_vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/headerGender"
-                android:layout_marginEnd="5dp"
-                android:padding="5dp"
-                style="@style/ProfileHeaderText"
-                android:text="@string/profile_header_gender" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/genderTextView"
-                style="@style/ProfileText" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="15dp"
-            android:gravity="center_vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/headerDob"
-                android:layout_marginEnd="5dp"
-                android:padding="5dp"
-                style="@style/ProfileHeaderText"
-                android:text="@string/profile_header_dob" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/dobTextView"
-                style="@style/ProfileText" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="15dp"
             android:gravity="center_vertical">
 
             <TextView

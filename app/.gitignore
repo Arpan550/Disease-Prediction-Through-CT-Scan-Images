@@ -25,7 +25,7 @@
 google-services.json
 
 # Asset files
-src/main/assets/bot.html
+src/main/assets/*
 
 # String resources
 src/main/res/values/strings.xml
