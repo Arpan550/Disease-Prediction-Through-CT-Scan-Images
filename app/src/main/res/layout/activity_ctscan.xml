@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#2D3949AB"
     android:fitsSystemWindows="true"
-    tools:context=".CTScanActivity">
+    tools:context=".view.activity.CTScanActivity">
 
     <!-- Top View -->
     <RelativeLayout

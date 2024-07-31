@@ -1,4 +1,4 @@
-package com.example.medipred;
+package com.example.medipred.view.activity;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -16,15 +16,15 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
+import com.example.medipred.R;
+import com.example.medipred.databinding.ActivityCtscanBinding;
 import com.example.medipred.ml.Model;
+import com.example.medipred.viewmodel.ScanDataViewModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.tensorflow.lite.DataType;
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
@@ -35,11 +35,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Locale;
-import java.util.Map;
-
-import com.example.medipred.databinding.ActivityCtscanBinding;
 
 public class CTScanActivity extends AppCompatActivity {
 
@@ -48,10 +44,8 @@ public class CTScanActivity extends AppCompatActivity {
     private static final int IMAGE_SIZE = 224;
 
     private ActivityCtscanBinding binding;
-    private FirebaseFirestore db;
+    private ScanDataViewModel scanDataViewModel;
     private ProgressDialog progressDialog;
-    private FirebaseAuth mAuth;
-    private FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,15 +53,24 @@ public class CTScanActivity extends AppCompatActivity {
         binding = ActivityCtscanBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        db = FirebaseFirestore.getInstance();
-        mAuth = FirebaseAuth.getInstance();
-        currentUser = mAuth.getCurrentUser();
+        scanDataViewModel = new ViewModelProvider(this).get(ScanDataViewModel.class);
 
         initViews();
         setListeners();
         hideResults();
 
         binding.btnBack.setOnClickListener(view -> finish());
+
+        scanDataViewModel.getIsSaving().observe(this, isSaving -> {
+            if (isSaving) {
+                progressDialog = new ProgressDialog(CTScanActivity.this);
+                progressDialog.setMessage("Saving scan data...");
+                progressDialog.setCancelable(false);
+                progressDialog.show();
+            } else if (progressDialog != null && progressDialog.isShowing()) {
+                progressDialog.dismiss();
+            }
+        });
     }
 
     private void initViews() {
@@ -76,7 +79,6 @@ public class CTScanActivity extends AppCompatActivity {
 
     private void setListeners() {
         binding.btnSubmit.setOnClickListener(view -> {
-            // Ensure an image is selected before submitting
             if (binding.imgPreview.getDrawable() != null) {
                 Bitmap img = ((BitmapDrawable) binding.imgPreview.getDrawable()).getBitmap();
                 processImage(img);
@@ -190,79 +192,23 @@ public class CTScanActivity extends AppCompatActivity {
 
             binding.result.setText(predictedLabel + "\n\nConfidence: " + confidenceStr);
 
-            // Save to Firestore on button click
+            // Save to Firestore via ViewModel
             binding.btnSubmit.setOnClickListener(view -> {
-                progressDialog = new ProgressDialog(this);
-                progressDialog.setMessage("Saving scan data...");
-                progressDialog.setCancelable(false);
-                progressDialog.show();
-                saveToFirestore(predictedLabel, confidenceStr);
+                scanDataViewModel.saveScanData(img, predictedLabel, confidenceStr);
             });
 
             model.close();
         } catch (IOException e) {
-            Toast.makeText(this, "Network Error", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Error processing image", Toast.LENGTH_SHORT).show();
         }
     }
-
-    private void saveToFirestore(String predictedLabel, String confidence) {
-        Bitmap img = ((BitmapDrawable) binding.imgPreview.getDrawable()).getBitmap();
-
-        // Convert Bitmap to byte array
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        img.compress(Bitmap.CompressFormat.PNG, 100, baos);
-        byte[] imageData = baos.toByteArray();
-
-        // Convert byte[] to Base64 encoded string
-        String imageBase64 = Base64.encodeToString(imageData, Base64.DEFAULT);
-
-        // Create a timestamp for the current time
-        Timestamp timestamp = Timestamp.now();
-
-        // Format the timestamp as dd:hh:mm:ss
-        SimpleDateFormat sdf = new SimpleDateFormat("dd:HH:mm:ss", Locale.getDefault());
-        String formattedTimestamp = sdf.format(new Date());
-
-        // Prepare data to save
-        Map<String, Object> scanData = new HashMap<>();
-        scanData.put("image", imageBase64);  // Store as Base64 string
-        scanData.put("predictedLabel", predictedLabel);
-        scanData.put("confidence", confidence);
-        scanData.put("timestamp", timestamp);
-
-        // Ensure currentUser is not null
-        if (currentUser != null) {
-            String userId = currentUser.getUid();
-            // Save to Firestore
-            db.collection("ct_scans")
-                    .document(userId)
-                    .collection("scans")
-                    .document(formattedTimestamp)  // Use formatted timestamp as document ID
-                    .set(scanData)
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(CTScanActivity.this, "Scan data saved to Firestore", Toast.LENGTH_SHORT).show();
-                            } else {
-                                Toast.makeText(CTScanActivity.this, "Error saving scan data: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                            if (progressDialog != null && progressDialog.isShowing()) {
-                                progressDialog.dismiss();
-                            }
-                        }
-                    });
-        } else {
-            Toast.makeText(this, "User not authenticated", Toast.LENGTH_SHORT).show();
-            if (progressDialog != null && progressDialog.isShowing()) {
-                progressDialog.dismiss();
-            }
-        }
-    }
-
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        if (progressDialog != null && progressDialog.isShowing()) {
+            progressDialog.dismiss();
+        }
     }
 }
+

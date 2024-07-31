@@ -1,16 +1,15 @@
-package com.example.medipred;
+package com.example.medipred.view.activity;
 
 import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.example.medipred.R;
 
 public class ChatActivity extends AppCompatActivity {
 

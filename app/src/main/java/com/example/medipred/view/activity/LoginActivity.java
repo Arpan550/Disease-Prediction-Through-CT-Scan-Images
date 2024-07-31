@@ -1,4 +1,4 @@
-package com.example.medipred;
+package com.example.medipred.view.activity;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.medipred.R;
 import com.example.medipred.databinding.ActivityLoginBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

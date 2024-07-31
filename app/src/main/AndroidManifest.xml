@@ -25,23 +25,23 @@
 
 
         <activity
-            android:name=".ChatActivity"
+            android:name=".view.activity.ChatActivity"
             android:exported="false" />
         <activity
-            android:name=".HistoryActivity"
+            android:name=".view.activity.HistoryActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".view.activity.ProfileActivity"
             android:exported="false"
             android:theme="@style/Theme.MediPred" />
         <activity
-            android:name=".SetDpActivity"
+            android:name=".view.activity.SetDpActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".view.activity.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".view.activity.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -50,10 +50,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CTScanActivity"
+            android:name=".view.activity.CTScanActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.activity.MainActivity"
             android:exported="true" />
     </application>
 
