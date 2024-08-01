@@ -16,6 +16,22 @@ MediPred is an Android application designed for real-time disease prediction usi
 
 - **MVVM Design Pattern**: Adopted the MVVM (Model-View-ViewModel) design pattern for a clean, scalable, and maintainable code architecture.
 
+## Screenshots
+<div style="display: flex; justify-content: space-around; flex-wrap: nowrap; overflow-x: auto;">
+    <img src="https://github.com/user-attachments/assets/eac01fa1-af21-4193-aab1-ac7f7f055990" alt="Screenshot 7" width="200" style="border-radius: 8px; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);"/>
+    <img src="https://github.com/user-attachments/assets/d5232d0f-b8a1-49bc-838b-ea0f7bce02ea" alt="Screenshot 4" width="200" style="border-radius: 8px; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);"/>
+    <img src="https://github.com/user-attachments/assets/e04e2fa6-9468-4385-88f2-31151c95d161" alt="Screenshot 3" width="200" style="border-radius: 8px; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);"/>
+    <img src="https://github.com/user-attachments/assets/05c952a1-c7d5-4792-8a84-b2a4b7b927d2" alt="Screenshot 2" width="200" style="border-radius: 8px; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);"/>
+    <img src="https://github.com/user-attachments/assets/79549276-a1ef-44ce-87f9-5cfa8723a37d" alt="Screenshot 14" width="200" style="border-radius: 8px; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);"/>
+    <img src="https://github.com/user-attachments/assets/fd24231e-e160-402d-98f4-06b669836eae" alt="Screenshot 10" width="200" style="border-radius: 8px; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);"/>
+    <img src="https://github.com/user-attachments/assets/e7b2ab02-be6c-45fb-98bb-46f16e463e1b" alt="Screenshot 14" width="200" style="border-radius: 8px; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);"/>
+    <img src="https://github.com/user-attachments/assets/c5ab8d9b-4e04-431e-b53f-3454af12ca84" alt="Screenshot 10" width="200" style="border-radius: 8px; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);"/>
+    <img src="https://github.com/user-attachments/assets/66096e5d-e95a-4a95-a270-4a3074fd7ce5" alt="Screenshot 12" width="200" style="border-radius: 8px; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);"/>
+    <img src="https://github.com/user-attachments/assets/14f1cd78-8145-496b-a175-f4b92eb90f70" alt="Screenshot 12" width="200" style="border-radius: 8px; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);"/>
+    <img src="https://github.com/user-attachments/assets/b5c1606b-1d25-440c-946a-7eab01ff5646" alt="Screenshot 5" width="200" style="border-radius: 8px; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);"/>
+    <img src="https://github.com/user-attachments/assets/92b615fb-9777-4e66-ad87-c66a9d924ea8" alt="Screenshot 1" width="200" style="border-radius: 8px; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);"/>
+</div>
+
 ## Getting Started
 
 To get started with MediPred, follow these instructions:
