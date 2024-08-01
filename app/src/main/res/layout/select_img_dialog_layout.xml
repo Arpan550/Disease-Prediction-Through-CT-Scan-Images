@@ -4,7 +4,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:background="#2D3949AB"
+    android:background="@color/background"
     android:gravity="center"
     android:padding="16dp">
 
@@ -13,34 +13,38 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         app:cardCornerRadius="15dp"
-        app:cardElevation="15dp"
+        app:cardElevation="8dp"
         app:cardUseCompatPadding="true">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="16dp"
+            android:gravity="center">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/Camera_Btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="12dp"
                 android:background="@drawable/button_camera_background"
-                android:text="Camera"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp" />
+                android:text="Open Camera"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textAllCaps="false"
+                android:padding="12dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/Gallery_Btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_gallery_background"
-                android:text="Gallery"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp" />
+                android:text="Open Gallery"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textAllCaps="false"
+                android:padding="12dp" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

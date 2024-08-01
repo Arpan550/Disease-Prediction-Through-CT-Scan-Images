@@ -7,19 +7,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".view.activity.LoginActivity"
+    tools:context=".view.activity.SignUpActivity"
     android:gravity="center">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp"
-            android:layout_gravity="center">
+            android:padding="16dp">
 
             <!-- Title -->
             <TextView
@@ -27,10 +27,10 @@
                 android:layout_height="wrap_content"
                 android:text="@string/app_name"
                 android:layout_gravity="center_horizontal"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginBottom="24dp"/>
 
             <ViewSwitcher
                 android:id="@+id/viewSwitcher"
@@ -48,14 +48,14 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="25dp"
+                        android:layout_marginBottom="16dp"
                         android:hint="@string/name">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/nameET"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:padding="10dp"
+                            android:padding="12dp"
                             android:inputType="textPersonName"
                             android:background="@drawable/edittext_bg"/>
                     </com.google.android.material.textfield.TextInputLayout>
@@ -64,14 +64,14 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
                         android:hint="@string/enter_your_email_id">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/emailET"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:padding="10dp"
+                            android:padding="12dp"
                             android:inputType="textEmailAddress"
                             android:background="@drawable/edittext_bg"/>
                     </com.google.android.material.textfield.TextInputLayout>
@@ -80,7 +80,7 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
                         android:hint="@string/enter_your_password"
                         app:endIconMode="password_toggle">
 
@@ -88,7 +88,7 @@
                             android:id="@+id/passwordET"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:padding="10dp"
+                            android:padding="12dp"
                             android:inputType="textPassword"
                             android:background="@drawable/edittext_bg"/>
                     </com.google.android.material.textfield.TextInputLayout>
@@ -97,14 +97,14 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
                         android:hint="@string/phone_number">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/phnoET"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:padding="10dp"
+                            android:padding="12dp"
                             android:inputType="phone"
                             android:background="@drawable/edittext_bg"/>
                     </com.google.android.material.textfield.TextInputLayout>
@@ -116,50 +116,49 @@
                         android:text="@string/gender"
                         android:textStyle="bold"
                         android:textColor="@color/black"
-                        android:layout_marginTop="8dp"/>
+                        android:layout_marginBottom="8dp"/>
 
                     <RadioGroup
                         android:id="@+id/genderRadioGroup"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="5dp">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/maleRadioButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/male"
                             android:layout_weight="1"
-                            android:layout_marginEnd="20dp"/>
+                            android:layout_marginEnd="16dp"
+                            android:text="@string/male"/>
                         <RadioButton
                             android:id="@+id/femaleRadioButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/female"
                             android:layout_weight="1"
-                            android:layout_marginEnd="20dp"/>
+                            android:layout_marginEnd="16dp"
+                            android:text="@string/female"/>
                         <RadioButton
                             android:id="@+id/otherRadioButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:layout_marginEnd="16dp"
                             android:text="@string/other"/>
                     </RadioGroup>
-
 
                     <!-- Date of Birth Input -->
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
                         android:hint="@string/dob">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/dobET"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:padding="10dp"
+                            android:padding="12dp"
                             android:inputType="date"
                             android:background="@drawable/edittext_bg"
                             android:focusable="false"
@@ -170,30 +169,27 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
                         android:text="@string/country"
                         android:textStyle="bold"/>
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/selectCountry"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="16dp"
                         android:hint="@string/country"
                         android:focusable="false">
 
                         <com.hbb20.CountryCodePicker
                             app:ccp_defaultNameCode="IND"
                             android:id="@+id/country_code"
-                            android:layout_marginTop="10dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:ccp_autoDetectCountry="false"
                             app:ccp_showFlag="true"
                             app:ccp_showNameCode="true"
                             app:ccp_showFullName="true"
-                            android:focusable="false">
-                        </com.hbb20.CountryCodePicker>
-
+                            android:focusable="false"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <!-- Signup Button -->
@@ -201,13 +197,13 @@
                         android:id="@+id/signupBTN"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="25dp"
-                        android:padding="10dp"
+                        android:layout_marginTop="24dp"
+                        android:padding="12dp"
                         android:background="@drawable/bg_btn"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         android:text="@string/signup"
-                        android:textSize="15sp"/>
+                        android:textSize="16sp"/>
 
                     <!-- Switch to Login -->
                     <TextView
@@ -217,8 +213,8 @@
                         android:text="@string/already_have_an_account"
                         android:layout_gravity="center_horizontal"
                         android:textSize="16sp"
-                        android:textColor="#420909"
-                        android:layout_marginTop="15dp"
+                        android:textColor="@color/colorAccent"
+                        android:layout_marginTop="24dp"
                         android:onClick="showLoginForm"/>
                 </LinearLayout>
             </ViewSwitcher>

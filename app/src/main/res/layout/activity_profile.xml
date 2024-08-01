@@ -1,18 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background_color"
-    android:id="@+id/main">
+    tools:context=".view.activity.ProfileActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:padding="24dp">
 
+        <!-- Profile Image -->
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profileImageView"
             android:layout_width="120dp"
@@ -22,6 +24,7 @@
             app:civ_border_width="5dp"
             app:civ_border_color="@color/black"/>
 
+        <!-- Name Section -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -30,23 +33,24 @@
             android:gravity="center_vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/headerName"
-                android:layout_marginEnd="5dp"
-                android:padding="5dp"
-                style="@style/ProfileHeaderText"
-                android:text="@string/profile_header_name" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="@string/profile_header_name"
+                style="@style/ProfileHeaderText" />
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:id="@+id/nameTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""
                 style="@style/ProfileText" />
 
         </LinearLayout>
 
+        <!-- Email Section -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -55,23 +59,24 @@
             android:gravity="center_vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/headerEmail"
-                android:layout_marginEnd="5dp"
-                android:padding="5dp"
-                style="@style/ProfileHeaderText"
-                android:text="@string/profile_header_email" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="@string/profile_header_email"
+                style="@style/ProfileHeaderText" />
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:id="@+id/emailTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""
                 style="@style/ProfileText" />
 
         </LinearLayout>
 
+        <!-- Phone Section -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -80,23 +85,24 @@
             android:gravity="center_vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/headerPhone"
-                android:layout_marginEnd="5dp"
-                android:padding="5dp"
-                style="@style/ProfileHeaderText"
-                android:text="@string/profile_header_phone" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="@string/profile_header_phone"
+                style="@style/ProfileHeaderText" />
 
             <TextView
+                android:id="@+id/phoneTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:id="@+id/phoneTextView"
+                android:text=""
                 style="@style/ProfileText" />
 
         </LinearLayout>
 
+        <!-- Country Section -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -105,32 +111,38 @@
             android:gravity="center_vertical">
 
             <TextView
+                android:id="@+id/headerCountry"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/headerCountry"
-                android:layout_marginEnd="5dp"
-                android:padding="5dp"
-                style="@style/ProfileHeaderText"
-                android:text="@string/profile_header_country" />
+                android:layout_marginEnd="8dp"
+                android:text="@string/profile_header_country"
+                style="@style/ProfileHeaderText" />
 
             <TextView
+                android:id="@+id/countryTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:id="@+id/countryTextView"
+                android:text=""
                 style="@style/ProfileText" />
 
         </LinearLayout>
 
+        <!-- Buttons -->
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/downloadReportBTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/profile_button_download_report"
             style="@style/ProfileButton"
-            android:text="@string/profile_button_download_report" />
+            android:layout_marginTop="24dp"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/signoutBTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/profile_button_sign_out"
             style="@style/ProfileButton"
-            android:text="@string/profile_button_sign_out" />
-
+            android:layout_marginTop="16dp"/>
     </LinearLayout>
 </ScrollView>
